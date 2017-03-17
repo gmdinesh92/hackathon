@@ -6,15 +6,24 @@ import CallQueue from './components/call_queue'
 import ItemCard from './components/itemcard'
 import {Col} from 'react-bootstrap'
 
+import SimpleMap from './components/peoplemap'
+
 
 class HomePage extends React.Component {
     render() {
       const cardStyle = {
-        'marginTop': '10rem',
+        marginTop: '10rem',
+      };
+
+      const mapStyle = {
+        marginTop: '10rem',
+        marginBottom: '10rem',
+        height: '50rem',
       };
         return (
             <div>
               <NavigationBar/>
+              
               <div className="cards container" style={cardStyle}>
                 <Col xs={12} md={4}>
                   <ItemCard title='Snow Strom' subtitle='New york on 27th Oct 2016' content='In New York City, the arrival of a major snowstorm a challenge for state and city officials.Schools were closed. Aboveground subway service was shut down. Snow plows were plentiful. Many New Yorkers were stuck at home or had difficulty commuting, but there was no fiery criticism about stranded trains or unmanageable piles of snow as there had been in past storms.' image="src/images/snow.png"/>
@@ -27,6 +36,12 @@ class HomePage extends React.Component {
                 </Col>
               </div>
                 <CallQueue/>
+
+              <div className="container" style={mapStyle}>
+                 <Col xs={12} md={12}>
+                  <SimpleMap />
+                 </Col>                
+              </div>
             </div>
         );
     }
