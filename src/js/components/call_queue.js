@@ -1,92 +1,48 @@
 import React from 'react';
 import {Table} from 'react-bootstrap';
+import users from 'json-loader!../../../users.json';
 class CallQueue extends React.Component {
-    render() {
-        return (
-            <div className="container padding">
-                <div className="row">
-                    <h3>Call In MyQueue</h3>
-                </div>
-                <div className="row">
-                    <Table className="tabler table-hover">
-                        <tbody>
-                        <tr>
-                            <td>Marie</td>
-                            <td>smith</td>
-                            <td>abc,xyz</td>
-                            <td>
-                                <div className="column">
-                                    <p>123-456-7890   <img src="../../src/images/phone.png" /></p>
-                                </div>
-                            </td>
-                            <td>
-                                <div>
-                                    <img src="../../src/images/map.png" />
-                                </div>
-                            </td>
+    render_table() {
+        let tableList = users.users.map(function (user) {
+            return (
+                <tr>
+                    <td>{user.firstName}</td>
+                    <td>{user.lastName}</td>
+                    <td>
+                        <div className="column"><p>{user.phone}</p></div>
+                    </td>
+                    <td>
+                        <div><p>{user.address}</p></div>
+                    </td>
+                    <td>{user.description}</td>
+                </tr>
+            );
+        })
+        return tableList
+    }
 
-                            <td>Table cell</td>
+    render() {
+        return (<div className="container padding">
+            <div className="row">
+                <h3>Call In MyQueue</h3>
+                <Table responsive striped>
+                    <thead>
+                        <tr >
+                            <th ><img src="../../src/images/people.png"/></th>
+                            <th></th>
+                            <th><img src="../../src/images/phone.png"/></th>
+                            <th><img src="../../src/images/map.png"/></th>
+                            <th></th>
                         </tr>
-                        <tr>
-                            <td>Tiffany</td>
-                            <td>Table cell</td>
-                            <td>Table cell</td>
-                            <td>Table cell</td>
-                        </tr>
-                        <tr>
-                            <td>Sirhan</td>
-                            <td>Table cell</td>
-                            <td>Table cell</td>
-                            <td>Table cell</td>
-                        </tr>
-                        <tr>
-                            <td>Doe</td>
-                            <td>Table cell</td>
-                            <td>Table cell</td>
-                            <td>Table cell</td>
-                        </tr>
-                        <tr>
-                            <td>Jhon</td>
-                            <td>Table cell</td>
-                            <td>Table cell</td>
-                            <td>Table cell</td>
-                        </tr>
-                        <tr>
-                            <td>Daniel</td>
-                            <td>Table cell</td>
-                            <td>Table cell</td>
-                            <td>Table cell</td>
-                        </tr>
-                        <tr>
-                            <td>Jack</td>
-                            <td>Table cell</td>
-                            <td>Table cell</td>
-                            <td>Table cell</td>
-                        </tr>
-                        <tr>
-                            <td>Joshuva</td>
-                            <td>Table cell</td>
-                            <td>Table cell</td>
-                            <td>Table cell</td>
-                        </tr>
-                        <tr>
-                            <td>Genifer</td>
-                            <td>Table cell</td>
-                            <td>Table cell</td>
-                            <td>Table cell</td>
-                        </tr>
-                        <tr>
-                            <td>Swan</td>
-                            <td>Table cell</td>
-                            <td>Table cell</td>
-                            <td>Table cell</td>
-                        </tr>
-                        </tbody>
-                    </Table>
-                </div>
+                    </thead>
+
+                    <tbody>
+                        {this.render_table()}
+                    </tbody>
+                </Table>
             </div>
+        </div>
         );
     }
 }
-
 export default CallQueue

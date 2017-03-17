@@ -1,10 +1,6 @@
-.tabler {
-    margin-top: 2rem;
-    text-align:center;
-}
 
 .padding{
-    padding: 4rem;
+  padding: 4rem;
 }
 
 h3{
@@ -12,12 +8,5 @@ h3{
     color: #00B4D2 ;
 }
 
-.table {
-    border-bottom:0px !important;
-}
-
-.table th, .table td {
-    border: 0px !important;
-}
 
 
