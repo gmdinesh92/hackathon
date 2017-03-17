@@ -29,5 +29,15 @@
 		"lat": "59.935411",
 		"lon": "30.347870",
 		"description": "My house got badly damaged due to the recent storm"
+	},{
+		"firstName": "Yogesh",
+		"lastName": "S",
+		"phone": "757-343-1354",
+		"address": "22/B Sunny Street",
+		"fund": "500",
+		"requireAsst": false,
+		"lat": "59.885719",
+		"lon": "30.387579",
+		"description": "My house got badly damaged due to the recent storm"
 	}]
 }

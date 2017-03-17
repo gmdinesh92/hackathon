@@ -5,9 +5,24 @@ import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'mat
 import {ResponsiveEmbed} from 'react-bootstrap';
 
 import injectTapEventPlugin from 'react-tap-event-plugin';
+import { browserHistory } from 'react-router';
+
+
 injectTapEventPlugin();
 
 class ItemCard extends React.Component {
+
+    constructor() {
+        super()
+    }
+
+    viewIncidentClicked() {
+        console.log('Incident Clicked')
+        // browserHistory.push('#/incident');
+        window.location.href = '#/incident'
+
+    }
+
     render() {
         return (
             <div>
@@ -21,7 +36,7 @@ class ItemCard extends React.Component {
                             {this.props.content}
                         </CardText>
                         <CardActions>
-                            <FlatButton label="View incident" />
+                            <FlatButton label="View incident" onClick={this.viewIncidentClicked}/>
                              <FlatButton label="Read More" />
                         </CardActions>
                     </Card>

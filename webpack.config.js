@@ -4,7 +4,7 @@ var path = require('path');
 
 module.exports = {
   devtool: debug ? "inline-sourcemap" : null,
-  entry: "./src/js/app.js",
+  entry: "./src/js/router.js",
   devServer: {
     inline: true,
     port: 3333
