@@ -12,6 +12,9 @@ const routes = [{
     path: '/',
     component: HomePage
 },{path: '/incident',
-    component: Incidents}];
+    component: Incidents},
+    {path: '/account',
+    component: HomePage
+}];
 
 ReactDOM.render(<Router history={appHistory}>{routes}</Router>, document.getElementById('app'));

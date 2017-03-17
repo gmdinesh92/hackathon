@@ -106,7 +106,7 @@ export default class SimpleMap extends Component {
           <Row style={requestStyle}>
             <Col xs={12} sm={3}> 
                <Jumbotron onClick={this.totalclicked}>
-                 <h3> Total ({requests.requests.total.length}) </h3>
+                 <h3> Consultation ({requests.requests.total.length}) </h3>
                </Jumbotron>
             </Col>
             <Col xs={12} sm={3}> 
@@ -121,7 +121,7 @@ export default class SimpleMap extends Component {
             </Col>  
             <Col xs={12} sm={3}> 
                <Jumbotron onClick={this.teamsClicked}>
-                 <h3> Teams ({teams.teams.length})</h3>
+                 <h3> Volunteer groups ({teams.teams.length})</h3>
                </Jumbotron>
             </Col>              
           </Row>

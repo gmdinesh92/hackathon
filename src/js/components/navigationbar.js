@@ -15,8 +15,8 @@ class NavigationBar extends React.Component {
                     </Navbar.Header>
                     <Navbar.Collapse>
                       <Nav pullRight>
-                        <NavItem eventKey={1} href="#" className="active">Home</NavItem>
-                        <NavItem eventKey={1} href="#">My Account</NavItem>
+                        <NavItem eventKey={1} href="#" >Home</NavItem>
+                        <NavItem eventKey={1} href="#/account">My Account</NavItem>
                         <NavItem eventKey={1} href="#">Logout </NavItem>
                       </Nav>
                     </Navbar.Collapse>
