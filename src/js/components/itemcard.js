@@ -22,6 +22,7 @@ class ItemCard extends React.Component {
                         </CardText>
                         <CardActions>
                             <FlatButton label="View incident" />
+                             <FlatButton label="Read More" />
                         </CardActions>
                     </Card>
                 </MuiThemeProvider>

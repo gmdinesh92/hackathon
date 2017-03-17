@@ -3,13 +3,16 @@ import {Table} from 'react-bootstrap';
 import users from 'json-loader!../../../users.json';
 class CallQueue extends React.Component {
     render_table() {
+        const phoneStyle = {
+      textDecoration:'none'
+    }
         let tableList = users.users.map(function (user,i) {
             return (
                 <tr key={i}>
                     <td>{user.firstName}</td>
                     <td>{user.lastName}</td>
                     <td>
-                        <div className="column"> <a href={'tel:'+ user.phone}> <p> {user.phone} </p> </a> </div>
+                        <div className="column"> <a style={phoneStyle} href={'tel:'+ user.phone}> <p> {user.phone} </p> </a> </div>
                     </td>
                     <td>
                         <div><p>{user.address}</p></div>

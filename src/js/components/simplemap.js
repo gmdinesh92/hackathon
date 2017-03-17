@@ -60,6 +60,10 @@ export default class SimpleMap extends Component {
       cursor:"pointer",
     }
 
+    const phoneStyle = {
+      textDecoration:'none'
+    }
+
     return (
         <div>
           <Row style={requestStyle}>
@@ -110,7 +114,7 @@ export default class SimpleMap extends Component {
               </tr>
               <tr> 
                   <td> Phone </td>
-                  <td> {this.state.user.contact} </td>
+                  <td> <a style={phoneStyle} href={'tel:'+this.state.user.contact }>{this.state.user.contact} </a> </td>
               </tr>
               <tr> 
                   <td> Address </td>
