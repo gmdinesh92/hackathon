@@ -37,6 +37,7 @@ class Incidents extends React.Component {
                
               <CallQueue/>
               <div className="container">
+                <h3> Requests Status </h3>
                 <iframe width="100%" height="720px" frameBorder="0" scrolling="no" src="http://localhost:3333/map.html"/>
               </div>
               <div className="container" style={mapStyle}>
