@@ -3,17 +3,28 @@ import {Table} from 'react-bootstrap';
 class CallQueue extends React.Component {
     render() {
         return (
-            <div className="container">
+            <div className="container padding">
                 <div className="row">
                     <h3>Call In MyQueue</h3>
                 </div>
                 <div className="row">
-                    <Table responsive className="tabler">
+                    <Table className="tabler table-hover">
                         <tbody>
                         <tr>
                             <td>Marie</td>
-                            <td>Table cell</td>
-                            <td>Table cell</td>
+                            <td>smith</td>
+                            <td>abc,xyz</td>
+                            <td>
+                                <div className="column">
+                                    <p>123-456-7890   <img src="../../src/images/phone.png" /></p>
+                                </div>
+                            </td>
+                            <td>
+                                <div>
+                                    <img src="../../src/images/map.png" />
+                                </div>
+                            </td>
+
                             <td>Table cell</td>
                         </tr>
                         <tr>

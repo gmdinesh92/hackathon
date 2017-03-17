@@ -1,9 +1,23 @@
 .tabler {
     margin-top: 2rem;
-    border-style: none;
-    border-color: transparent;
+    text-align:center;
+}
+
+.padding{
+    padding: 4rem;
 }
 
 h3{
-    margin-top: 2rem;
+    margin-top: 3rem;
+    color: #00B4D2 ;
 }
+
+.table {
+    border-bottom:0px !important;
+}
+
+.table th, .table td {
+    border: 0px !important;
+}
+
+
