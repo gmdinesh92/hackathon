@@ -1,5 +1,33 @@
-{"users": [
-    {"firstName" : "Dinesh" ,"lastName":"G M", "phone" : "123-123-1234", "address" : "No 12, St Louis St, TX", "fund" : "250" , "requireAsst":false , "lat":"59.975413" , "lon":"30.377844" , "description": "Lost my home on katrina storm"  },
-    {"firstName" : "Parvathi" ,"lastName":"V", "phone" : "800-123-1234", "address" : "No 157, Landmark St, AB", "fund" : "300" , "requireAsst":false, "lat":"59.955426" , "lon":"30.327844", "description": "House damaged on 27/11 katrina storm"  },
-    {"firstName" : "Samyuktha" ,"lastName":"J", "phone" : "757-343-1334", "address" : "No 265, Baker's Street", "fund" : "500" , "requireAsst":false , "lat":"59.935411" , "lon":"30.347870","description": "My house got badly damaged due to the recent storm"  }
-] }
+{
+	"users": [{
+		"firstName": "Dinesh",
+		"lastName": "G M",
+		"phone": "123-123-1234",
+		"address": "No 12, St Louis St, TX",
+		"fund": "250",
+		"requireAsst": false,
+		"lat": "59.975413",
+		"lon": "30.377844",
+		"description": "Lost my home on katrina storm"
+	}, {
+		"firstName": "Parvathi",
+		"lastName": "V",
+		"phone": "800-123-1234",
+		"address": "No 157, Landmark St, AB",
+		"fund": "300",
+		"requireAsst": false,
+		"lat": "59.955426",
+		"lon": "30.327844",
+		"description": "House damaged on 27/11 katrina storm"
+	}, {
+		"firstName": "Samyuktha",
+		"lastName": "J",
+		"phone": "757-343-1334",
+		"address": "22/B Baker's Street",
+		"fund": "500",
+		"requireAsst": false,
+		"lat": "59.935411",
+		"lon": "30.347870",
+		"description": "My house got badly damaged due to the recent storm"
+	}]
+}

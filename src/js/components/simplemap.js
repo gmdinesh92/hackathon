@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import GoogleMapReact from 'google-map-react';
 import MyGreatPlaceWithHover from './maphover';
-import {Col} from 'react-bootstrap'
+import {Col,Row} from 'react-bootstrap'
 
 import users from 'json-loader!../../../users.json';
+import requests from 'json-loader!../../../requests.json';
 
-import {Table} from 'react-bootstrap';
+import {Table,Jumbotron} from 'react-bootstrap';
 
 export default class SimpleMap extends Component {
 
@@ -22,6 +23,8 @@ export default class SimpleMap extends Component {
     zoom: 11
   };
 
+  
+
    onChildClick = (key, childProps) => {
      this.setState({user: {firstName: childProps.firstName , lastName: childProps.lastName, contact:childProps.phone , address: childProps.address , description: childProps.description} })
   }
@@ -34,22 +37,52 @@ export default class SimpleMap extends Component {
     return namesList
   }
 
+  totalclicked() {
+    console.log('here')
+  }
+
 
   render() {
+    const requestStyle = {
+      textAlign:'center',
+      cursor:"pointer",
+    }
 
     return (
         <div>
-        <Col xs={12} sm={8}>
-        <GoogleMapReact
-        defaultCenter={this.props.center}
-        defaultZoom={this.props.zoom} onChildClick={this.onChildClick}>
-
-        {this.mapPositions()} 
+          <Row style={requestStyle}>
+            <Col xs={12} sm={3}> 
+               <Jumbotron onClick={this.totalclicked}>
+                 <h3> Total ({requests.requests.total.length}) </h3>
+               </Jumbotron>
+            </Col>
+            <Col xs={12} sm={3}> 
+               <Jumbotron>
+                 <h3> SOS ({requests.requests.sos.length}) </h3>
+               </Jumbotron>
+            </Col>  
+            <Col xs={12} sm={3}> 
+               <Jumbotron>
+                 <h3> Unresolved ({requests.requests.unresolved.length}) </h3>
+               </Jumbotron>
+            </Col>  
+            <Col xs={12} sm={3}> 
+               <Jumbotron>
+                 <h3> Teams</h3>
+               </Jumbotron>
+            </Col>              
+          </Row>
         
-      </GoogleMapReact>
+        <Col xs={12} sm={8}>
+          <GoogleMapReact
+          defaultCenter={this.props.center}
+          defaultZoom={this.props.zoom} onChildClick={this.onChildClick}>
+          {this.mapPositions()} 
+          </GoogleMapReact>
         </Col>
+
         <Col xs={12} sm={4}> 
-          { this.state.user.firstName? <Table responsive className="tabler">
+          { this.state.user.firstName? <Table responsive bordered hover striped>
             <tbody>
               <tr> 
                   <td> First Name </td>
