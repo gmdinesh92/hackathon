@@ -17,10 +17,7 @@ class ItemCard extends React.Component {
     }
 
     viewIncidentClicked() {
-        console.log('Incident Clicked')
-        // browserHistory.push('#/incident');
         window.location.href = '#/incident'
-
     }
 
     render() {
