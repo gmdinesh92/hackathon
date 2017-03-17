@@ -170,7 +170,7 @@ export default class SimpleMap extends Component {
             {this.state.teams.length>0 ? <Table responsive bordered hover striped>
               <thead>
                   <tr>
-                      <th>Team Name</th>
+                      <th>Group Name</th>
                       <th>Members</th>
                       <th>Date formed</th>
                       <th>Fund Raised ($)</th>
