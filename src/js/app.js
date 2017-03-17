@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 import NavigationBar from './components/navigationbar'
-import HomeCarousel from './components/carousel'
+import CallQueue from './components/call_queue'
 import ItemCard from './components/itemcard'
 import {Col} from 'react-bootstrap'
 
@@ -10,7 +10,7 @@ import {Col} from 'react-bootstrap'
 class HomePage extends React.Component {
     render() {
       const cardStyle = {
-        'margin-top': '10rem',
+        'marginTop': '10rem',
       };
         return (
             <div>
@@ -26,6 +26,7 @@ class HomePage extends React.Component {
                   <ItemCard title='The Johnstown Flood' subtitle='Pennsylvania on 9th Feb 2016' content='Johnstown experienced major flooding that reached 17 feet on the Franklin street bridge. On March 14, 1907, there was flooding that was bested only by the one in 1898. There was talk of flood control but nothing was accomplished. Talks had finally determined that something needed to be done and the legislature was working on a bill by 1935.' image="src/images/flood.jpg"/>
                 </Col>
               </div>
+                <CallQueue/>
             </div>
         );
     }
