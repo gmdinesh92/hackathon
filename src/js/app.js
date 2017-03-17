@@ -6,7 +6,7 @@ import CallQueue from './components/call_queue'
 import ItemCard from './components/itemcard'
 import {Col} from 'react-bootstrap'
 
-import SimpleMap from './components/peoplemap'
+import SimpleMap from './components/simplemap'
 
 
 class HomePage extends React.Component {
