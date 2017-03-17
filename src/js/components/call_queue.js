@@ -9,7 +9,7 @@ class CallQueue extends React.Component {
                     <td>{user.firstName}</td>
                     <td>{user.lastName}</td>
                     <td>
-                        <div className="column"><p>{user.phone}</p></div>
+                        <div className="column"> <a href={'tel:'+ user.phone}> <p> {user.phone} </p> </a> </div>
                     </td>
                     <td>
                         <div><p>{user.address}</p></div>
@@ -24,15 +24,15 @@ class CallQueue extends React.Component {
     render() {
         return (<div className="container padding">
             <div className="row">
-                <h3>Call In MyQueue</h3>
-                <Table responsive striped>
+                <h3>Calls In MyQueue</h3>
+                <Table responsive striped >
                     <thead>
-                        <tr >
-                            <th ><img src="../../src/images/people.png"/></th>
+                        <tr>
+                            <th class="align"><img src="../../src/images/people.png"/></th>
                             <th></th>
                             <th><img src="../../src/images/phone.png"/></th>
                             <th><img src="../../src/images/map.png"/></th>
-                            <th></th>
+                            <th><img src="../../src/images/description.png"/></th>
                         </tr>
                     </thead>
 

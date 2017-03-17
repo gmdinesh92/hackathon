@@ -8,3 +8,17 @@ h3{
     color: #00B4D2 ;
     white-space: nowrap;
 }
+
+
+
+.table th, .table tr{
+    text-align: center;
+    img{
+        text-align: center;
+    }
+}
+
+
+a {
+    text-decoration: none;
+}
