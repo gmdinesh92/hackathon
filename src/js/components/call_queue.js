@@ -3,9 +3,9 @@ import {Table} from 'react-bootstrap';
 import users from 'json-loader!../../../users.json';
 class CallQueue extends React.Component {
     render_table() {
-        let tableList = users.users.map(function (user) {
+        let tableList = users.users.map(function (user,i) {
             return (
-                <tr>
+                <tr key={i}>
                     <td>{user.firstName}</td>
                     <td>{user.lastName}</td>
                     <td>

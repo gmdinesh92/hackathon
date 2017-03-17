@@ -13,8 +13,13 @@ export default class SimpleMap extends Component {
   constructor() {
     super()
     this.onChildClick = this.onChildClick.bind(this)
+    this.totalclicked = this.totalclicked.bind(this)
+    this.sosClicked = this.sosClicked.bind(this)
+    this.unresolvedClicked = this.unresolvedClicked.bind(this)
      this.state = {
-            user : {firstName: '', lastName: '' , contact: '' , address: '', description: '' }
+            user : {firstName: '', lastName: '' , contact: '' , address: '', description: ''  },
+            nameList:[],
+            mapPositions: ''
         }
   }
 
@@ -29,18 +34,25 @@ export default class SimpleMap extends Component {
      this.setState({user: {firstName: childProps.firstName , lastName: childProps.lastName, contact:childProps.phone , address: childProps.address , description: childProps.description} })
   }
 
-  mapPositions() {
-     let namesList = users.users.map(function(user, i){
-          return <MyGreatPlaceWithHover key={i}  lat={user.lat}
-          lng={user.lon} text={user.firstName} firstName= {user.firstName} lastName={user.lastName} phone={user.phone} address={user.address} description={user.description} />
+  googleMapPositions(users) {
+     let namesList = users.map(function(user, i){
+          return <MyGreatPlaceWithHover key={i}  lat={user.owner.lat}
+          lng={user.owner.lon} text={user.owner.firstName} firstName= {user.owner.firstName} lastName={user.owner.lastName} phone={user.owner.phone} address={user.owner.address} description={user.owner.description} />
         })
     return namesList
   }
 
   totalclicked() {
-    console.log('here')
+    this.setState({nameList: requests.requests.total , mapPositions: this.googleMapPositions(requests.requests.total) })
   }
 
+  sosClicked() {
+    this.setState({nameList: requests.requests.sos, mapPositions: this.googleMapPositions(requests.requests.sos) })
+  }
+
+  unresolvedClicked() {
+    this.setState({nameList: requests.requests.unresolved, mapPositions: this.googleMapPositions(requests.requests.unresolved) })
+  }
 
   render() {
     const requestStyle = {
@@ -57,12 +69,12 @@ export default class SimpleMap extends Component {
                </Jumbotron>
             </Col>
             <Col xs={12} sm={3}> 
-               <Jumbotron>
+               <Jumbotron onClick={this.sosClicked}>
                  <h3> SOS ({requests.requests.sos.length}) </h3>
                </Jumbotron>
             </Col>  
             <Col xs={12} sm={3}> 
-               <Jumbotron>
+               <Jumbotron onClick={this.unresolvedClicked}>
                  <h3> Unresolved ({requests.requests.unresolved.length}) </h3>
                </Jumbotron>
             </Col>  
@@ -74,11 +86,15 @@ export default class SimpleMap extends Component {
           </Row>
         
         <Col xs={12} sm={8}>
-          <GoogleMapReact
+          
+          {this.state.nameList.length>0?<GoogleMapReact
           defaultCenter={this.props.center}
           defaultZoom={this.props.zoom} onChildClick={this.onChildClick}>
-          {this.mapPositions()} 
-          </GoogleMapReact>
+          
+          {this.state.mapPositions}
+
+          </GoogleMapReact>: null}
+        
         </Col>
 
         <Col xs={12} sm={4}> 

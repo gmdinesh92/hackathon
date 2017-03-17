@@ -16,7 +16,6 @@ class HomePage extends React.Component {
       };
 
       const mapStyle = {
-        marginTop: '10rem',
         marginBottom: '10rem',
         height: '50rem',
       };
